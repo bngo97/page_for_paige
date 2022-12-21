@@ -24,7 +24,7 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/DEXDDyb6t2o?&autoplay=1&mute=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/DEXDDyb6t2o?&autoplay=1&mute=0&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         
             </div>
         </div>
@@ -64,7 +64,7 @@
             modal.style.display = "none";
         }
     }
-    
+
     function addText(event) {
         if (event.src) {
             tinymce.activeEditor.execCommand('mceInsertContent', false, '<img height="16" width="16" style="margin-bottom:-2px" src="' + event.src + '"/>');
