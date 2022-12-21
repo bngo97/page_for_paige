@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.tiny.cloud/1/s18f3z1sre4d0ylqnxxaen3h6dg81vilt7z4090qmqc735fs/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1 class="container">A Page For Paige</h1>
+    <img class="custom_image" height="50" width="50"src="./img/EmoEmoji.jpeg"/>'
+    <img></body>
+    <div class="container">
+        <form method="POST" action="https://formspree.io/f/xnqyavkk">
+            <textarea name="message"></textarea>
+            <button class="button_style" type="submit">Send Brendan a Message</button>
+        </form>
+        <div id="emoji-picker"></div>
+    </div>
+    <div style="padding:15px;"></div>
+    <div class="container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/DEXDDyb6t2o?&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  <script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+      toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+      mergetags_list: [
+        { value: 'First.Name', title: 'First Name' },
+        { value: 'Email', title: 'Email' },
+      ],
+      height: 437,
+      width: 425,
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+  <script>
+    function addText(event) {
+        if (event.src) {
+            tinymce.activeEditor.execCommand('mceInsertContent', false, '<img height="16" width="16" style="margin-bottom:-2px" src="' + event.src + '"/>');
+        } else {
+            tinymce.activeEditor.execCommand('mceInsertContent', false, event.native);
+        }
+    }
+    const pickerOptions = { 
+        onEmojiSelect: addText, 
+        custom: [
+            {
+                id: 'paige',
+                name: 'Paige\'s Emoji Set',
+                emojis: [
+                    {
+                        id: 'emo-brendan',
+                        name: 'Emo-Brendan',
+                        keywords: ['emo-brendan'],
+                        skins: [{ src: './img/EmoEmoji.jpeg' }],
+                    },
+                    {
+                        id: 'emo-paige',
+                        name: 'Emo-Paige',
+                        keywords: ['emo-paige'],
+                        skins: [{ src: './img/EmoPaige.jpeg' }],
+                    },
+                    {
+                        id: 'emo-cowboy',
+                        name: 'Emo-Cowboy',
+                        keywords: ['emo-cowboy'],
+                        skins: [{ src: './img/EmoCowboy.jpeg' }],
+                    },
+                    {
+                        id: 'angry-paige',
+                        name: 'Angry-Paige',
+                        keywords: ['angry-paige'],
+                        skins: [{ src: './img/AngryPaige.jpg' }],
+                    },
+                    {
+                        id: 'kpop-paige',
+                        name: 'Kpop-Paige',
+                        keywords: ['kpop-paige'],
+                        skins: [{ src: './img/KpopPaige.jpg' }],
+                    },
+                    {
+                        id: 'pretty-paige',
+                        name: 'Pretty-Paige',
+                        keywords: ['pretty-paige'],
+                        skins: [{ src: './img/PrettyPaige.jpg' }],
+                    },
+                    {
+                        id: 'sunshine-paige',
+                        name: 'Sunshine-Paige',
+                        keywords: ['sunshine-paige'],
+                        skins: [{ src: './img/SunshinePaige.jpg' }],
+                    },
+                ],
+            },
+        ],
+        categories: ['paige', 'frequent', 'people', 'nature', 'foods', 'activity', 'places', 'objects', 'symbols', 'flags']
+    }
+    const picker = new EmojiMart.Picker(pickerOptions)
+    document.getElementById("emoji-picker").appendChild(picker)
+  </script>
+  <style>
+    body {
+        margin: 4rem auto;
+        padding: 0 2rem;
+        background-color: white;
+        font-family: sans-serif;
+    }
+
+    main {
+        width: 100%;
+    }
+    
+    .button_style {
+        background-color: white;
+        font-size: larger;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        margin-top: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .container {
+        display: flex;
+        gap: 10px;
+        flex-direction: row ltr;
+        justify-content: center;
+    }
+
+    .custom_image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -20px;
+        margin-bottom: -5px;
+    }
+  </style>
+</body>
+</html>
+
+
