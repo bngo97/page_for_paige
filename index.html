@@ -11,7 +11,10 @@
 
 <body>
     <h1 class="container">A Page For Paige</h1>
-    <img class="custom_image" height="50" width="50" src="./img/EmoEmoji.jpeg" />
+    <div class="container emo_hearts">
+        <img class="custom_image" height="50" width="50" src="./img/EmoEmoji.jpeg" />
+        <div style="font-size: 40px; margin-left: -10px;">❤️</div>
+    </div>
     <div class="container">
         <form method="POST" action="https://formspree.io/f/xnqyavkk">
             <textarea name="message"></textarea>
@@ -184,11 +187,8 @@
             justify-content: center;
         }
 
-        .custom_image {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: -20px;
+        .emo_hearts {
+            margin-top: -15px;
             margin-bottom: 10px;
         }
 
