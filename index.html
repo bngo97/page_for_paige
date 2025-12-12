@@ -15,23 +15,12 @@
         <img class="custom_image" height="50" width="50" src="./img/EmoEmoji.jpeg" />
         <div style="font-size: 40px; margin-left: -10px;">❤️</div>
     </div>
-    <div style="display: flex; flex-direction: column; align-items: center;">
-        <div class="container">
-            <textarea id="shared-message" name="message"></textarea>
-            <div id="emoji-picker"></div>
-        </div>
-        <div style="display: flex; gap: 10px; justify-content: center; margin-top: 8px;">
-            <form id="paige-form" method="POST" action="https://formspree.io/f/xnqyavkk" style="display: inline;">
-                <input type="hidden" name="message" id="paige-message">
-                <input type="hidden" name="recipient" value="paige">
-                <button class="button_style" type="submit">Send Paige a Message</button>
-            </form>
-            <form id="brendan-form" method="POST" action="https://formspree.io/f/xnqyavkk" style="display: inline;">
-                <input type="hidden" name="message" id="brendan-message">
-                <input type="hidden" name="recipient" value="brendan">
-                <button class="button_style" type="submit">Send Brendan a Message</button>
-            </form>
-        </div>
+    <div class="container">
+        <form method="POST" action="https://formspree.io/f/xnqyavkk">
+            <textarea name="message"></textarea>
+            <button class="button_style" type="submit">Send Brendan a Message</button>
+        </form>
+        <div id="emoji-picker"></div>
     </div>
     <!-- <div style="padding:15px;"></div>
     <div class="container">
@@ -56,7 +45,7 @@
     </div>
     <script>
         tinymce.init({
-            selector: '#shared-message',
+            selector: 'textarea',
             //plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
             //toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
             tinycomments_mode: 'embedded',
@@ -67,17 +56,6 @@
             ],
             height: 437,
             width: 425,
-        });
-
-        // Handle form submissions
-        document.getElementById('brendan-form').addEventListener('submit', function(e) {
-            const content = tinymce.get('shared-message').getContent();
-            document.getElementById('brendan-message').value = content;
-        });
-
-        document.getElementById('paige-form').addEventListener('submit', function(e) {
-            const content = tinymce.get('shared-message').getContent();
-            document.getElementById('paige-message').value = content;
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
@@ -200,10 +178,14 @@
 
         .button_style {
             /* background-color: white; */
-            font-size: medium;
-            padding: 6px 12px;
+            font-size: larger;
+            padding: 10px;
             /* border-radius: 8px; */
             text-align: center;
+            margin-top: 8px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
         }
 
         .button_style:hover {
