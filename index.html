@@ -59,6 +59,10 @@
 
     </div>
     <script>
+        function isMobile() {
+            return window.innerWidth <= 768;
+        }
+
         tinymce.init({
             selector: '#shared-message',
             //plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
@@ -69,7 +73,7 @@
                 { value: 'First.Name', title: 'First Name' },
                 { value: 'Email', title: 'Email' },
             ],
-            height: 437,
+            height: isMobile() ? 250 : 437,
             width: '100%',
             max_width: 425,
         });
@@ -304,6 +308,7 @@
 
             .container {
                 max-width: 100%;
+                flex-direction: column;
             }
 
             .button_style {
@@ -340,6 +345,18 @@
                 height: 40px !important;
                 width: 40px !important;
             }
+
+            /* Constrain emoji picker on mobile */
+            #emoji-picker {
+                max-width: 100%;
+                overflow-x: auto;
+            }
+
+            #emoji-picker em-emoji-picker {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 280px !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -359,6 +376,11 @@
 
             .modal-content {
                 padding: 10px;
+            }
+
+            /* Even more compact emoji picker on small phones */
+            #emoji-picker em-emoji-picker {
+                height: 250px !important;
             }
         }
     </style>
